@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<template
+    format="4"
+    revision="1"
+    name="Retrofit Service"
+    description="Creates a new Retrofit Service"
+    minApi="7"
+    minBuildApi="14">
+
+    <category value="Retrofit" />
+
+	<parameter
+        id="retrofitServiceClass"
+        name="Service name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="RetrofitService"
+        help="The name of the retrofit service class to create" />
+	
+	<parameter
+        id="resulDataClass"
+        name="Result data calss name"
+        type="string"
+        constraints="class|nonempty"
+        default="String"
+        help="The name of the resul data class to use" />
+
+    <parameter
+        id="apiServiceClass"
+        name="Api Service name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="ApiService"
+        help="The name of the api service interface to create"/>
+
+    <parameter 
+        id="isAddRetrofitLoggingInterceptor"
+        name="Retrofit logging interceptor"
+        type="boolean"
+        default="true"
+        help="If true, the api service implementation will have the logging interceptor for the requests logging"/>
+   
+    <!-- 128x128 thumbnails relative to template.xml -->
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>retrofit.png</thumb>
+    </thumbs>
+
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
